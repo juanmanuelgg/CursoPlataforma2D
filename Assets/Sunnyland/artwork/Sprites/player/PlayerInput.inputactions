@@ -28,13 +28,21 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Climb",
+                    "type": "Button",
+                    "id": "edd889c8-cb68-409d-8f5b-a21ea47d615e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "631dac9a-9565-4cb9-8fda-a88a89e9a6b1",
-                    "path": "<Joystick>/stick/up",
+                    "path": "<HID::Microntek              USB Joystick          >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -45,7 +53,7 @@
                 {
                     "name": "",
                     "id": "0a51bca7-8b9b-4403-89b7-26899b62653f",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -56,7 +64,7 @@
                 {
                     "name": "",
                     "id": "1fe765da-df9d-4e20-99e4-bd34715e01d7",
-                    "path": "<Joystick>/stick/down",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -76,7 +84,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis Joystick",
+                    "name": "1D Axis HatSwitch",
                     "id": "fd00bf98-8c5c-487e-a6e7-0cbda47c0125",
                     "path": "1DAxis",
                     "interactions": "",
@@ -89,7 +97,7 @@
                 {
                     "name": "negative",
                     "id": "11e74f52-0c0d-4f19-8816-d0eaba3a0210",
-                    "path": "<Joystick>/stick/left",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -100,7 +108,7 @@
                 {
                     "name": "positive",
                     "id": "9491d968-583b-41c1-9b4c-05fe969acdde",
-                    "path": "<Joystick>/stick/right",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -138,6 +146,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis HatSwitch",
+                    "id": "09b0525b-fa43-450f-922d-158b78db61c5",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "0518c15d-7026-4cfb-a8ec-c11275e9bbfc",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "67aba667-e0d8-46c7-81b6-1e314502c6e0",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis Keyboard",
+                    "id": "17a8a169-06ff-4058-8f31-ffcb6e0f7880",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "a5a6cc86-a4b5-479f-b857-01d46f655e55",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "72b2a611-c748-4cd9-b8e3-a52f9383181e",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
