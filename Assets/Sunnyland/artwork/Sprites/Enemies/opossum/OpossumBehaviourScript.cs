@@ -5,17 +5,17 @@ using UnityEngine;
 public class OpossumBehaviourScript : MonoBehaviour
 {
     public float vel = -1f;
-    Rigidbody2D rigidbody;
+    Rigidbody2D rigidbody2d;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        Vector2 v = new Vector2(vel, rigidbody.velocity.y);
-        rigidbody.velocity = v;
+        Vector2 v = new Vector2(vel, rigidbody2d.velocity.y);
+        rigidbody2d.velocity = v;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

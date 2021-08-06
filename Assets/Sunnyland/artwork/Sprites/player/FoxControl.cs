@@ -6,35 +6,36 @@ using UnityEngine.InputSystem;
 
 public class FoxControl : MonoBehaviour
 {
-    PlayerInput playerInput;
-    float velx;
-    float vely;
-    Boolean movingToTheRigth;
-    Boolean enableClimbing;
-    Boolean isMoving;
-    Boolean isClimbing;
-    Boolean isChrouching;
-    Boolean isJumping;
-    Rigidbody2D rigidbody;
-    Animator animator;
+    private PlayerInput playerInput;
+    
+    // Move
+    private float velx;
+    private bool movingToTheRigth;
+    // Crouch
+    public bool isCrouch;
+    // Jump
+    private bool isJumping;
+
+    private Rigidbody2D rigidbody2d;
+    private Animator animator;
 
     void Awake()
     {
         playerInput = new PlayerInput();
         velx = 0;
-        vely = 0;
         movingToTheRigth = true;
-        enableClimbing = false;
-
-        isMoving = false;
-        isClimbing = false;
-        isChrouching = false;
+        isCrouch = false;
         isJumping = false;
 
         playerInput.Movement.Move.performed += ctx => Move(ctx);
-        playerInput.Movement.Jump.performed += ctx => Jump();
+        playerInput.Movement.Move.canceled += ctx => Wait();
+
         playerInput.Movement.Crouch.performed += ctx => Crouch();
-        playerInput.Movement.Climb.performed += ctx => Climb(ctx);
+        playerInput.Movement.Crouch.canceled += ctx => Wait();
+
+        playerInput.Movement.Jump.performed += ctx => Jump();
+
+        // playerInput.Movement.Climb.performed += ctx => Climb(ctx);
     }
 
     void OnEnable()
@@ -45,40 +46,38 @@ public class FoxControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     //==================================================================================
+    void Wait()
+    {
+        isCrouch = false;
+        velx = 0;
+        animator.SetTrigger("Wait");
+    }
     void Move(InputAction.CallbackContext ctx)
     {
-        animator.SetTrigger("Walk");
         velx = ctx.ReadValue<float>();
-        isChrouching = false;
-        isMoving = true;
+        animator.SetTrigger("Walk");
     }
-    void Jump()
-    {
-        animator.SetTrigger("Jump");
-        isChrouching = false;
-        isClimbing = false;
-        isJumping = true;
-    }
-
     void Crouch()
     {
+        isCrouch = true;
+        velx = 0;
         animator.SetTrigger("Crouch");
-        isChrouching = true;
-        isMoving = false;
-        isClimbing = false;
-        isJumping = false;
     }
 
+    void Jump()
+    {
+        isJumping = true;
+        animator.SetTrigger("Jump");
+    }
+
+    /*
     void Climb(InputAction.CallbackContext ctx)
     {
-        isChrouching = false;
-        isClimbing = false;
-        isJumping = false;
         isClimbing = enableClimbing;
 
         if (enableClimbing)
@@ -87,7 +86,7 @@ public class FoxControl : MonoBehaviour
             vely = ctx.ReadValue<float>();
         }
     }
-
+    */
     void Flip()
     {
        var scale = transform.localScale;
@@ -99,18 +98,32 @@ public class FoxControl : MonoBehaviour
     // FixedUpdate is called once per frame, this one is used to interact with Rigidbody 2D
     void FixedUpdate()
     {
-        Vector2 v = enableClimbing && isClimbing? new Vector2(velx * 2f, vely): new Vector2(velx * 2f, rigidbody.velocity.y);
-        rigidbody.velocity = v;
+        if (isCrouch)
+        {
+            isJumping = false;
+            velx = 0;
+        }
 
-        if(movingToTheRigth && velx < 0) {
+        Vector2 v = new Vector2(velx * 3f, rigidbody2d.velocity.y);
+        rigidbody2d.velocity = v;
+
+        if(movingToTheRigth && velx < -0.1f) {
             movingToTheRigth = false;
             Flip();
-        } else if (!movingToTheRigth && velx > 0) {
+        } else if (!movingToTheRigth && velx > 0.1f) {
             movingToTheRigth = true;
             Flip();
         }
+
+        if (isJumping)
+        {
+            Vector2 f = new Vector2(0, 600);
+            rigidbody2d.AddForce(f);
+            isJumping = false;
+        }
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         enableClimbing = collision.gameObject.name == "TreeForClimbing";
@@ -121,6 +134,7 @@ public class FoxControl : MonoBehaviour
         enableClimbing = false;
         isClimbing = false;
     }
+    */
 
     void OnDisable()
     {
