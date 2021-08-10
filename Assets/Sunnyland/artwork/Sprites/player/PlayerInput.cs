@@ -49,35 +49,43 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc33f782-441c-4919-991a-73831fd382ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""631dac9a-9565-4cb9-8fda-a88a89e9a6b1"",
+                    ""id"": ""3dc32351-327e-4f17-af74-38494cb370b0"",
+                    ""path"": ""<HID::USB Gamepad >/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df93761a-5858-4744-b13d-d519a5c9b585"",
                     ""path"": ""<HID::Microntek              USB Joystick          >/button3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0a51bca7-8b9b-4403-89b7-26899b62653f"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1fe765da-df9d-4e20-99e4-bd34715e01d7"",
-                    ""path"": ""<HID::Microntek              USB Joystick          >/hat/down"",
+                    ""id"": ""d7576b50-8b57-4715-8ce5-8af7428644be"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -86,18 +94,40 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""3dc32351-327e-4f17-af74-38494cb370b0"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""name"": ""1D Axis Stick Joistick"",
+                    ""id"": ""6a59bee8-33a8-4189-bb7c-ee169ac44adb"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis HatSwitch"",
+                    ""name"": ""negative"",
+                    ""id"": ""6565bf05-0e2b-46e3-ae1d-76d6fe127d61"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""072aa3e7-bfce-4da9-9cb0-8d33411603e9"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis HatSwitch Joistick"",
                     ""id"": ""fd00bf98-8c5c-487e-a6e7-0cbda47c0125"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -196,37 +226,92 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis Keyboard"",
-                    ""id"": ""17a8a169-06ff-4058-8f31-ffcb6e0f7880"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""dee498a6-fcd2-47fe-a98c-61c37784e7a3"",
+                    ""path"": ""<HID::USB Gamepad >/button5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Climb"",
-                    ""isComposite"": true,
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""a5a6cc86-a4b5-479f-b857-01d46f655e55"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""name"": """",
+                    ""id"": ""c231f326-861c-4f52-a04c-a39867e1d8b2"",
+                    ""path"": ""<HID::USB Gamepad >/button6"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Climb"",
+                    ""action"": ""Grab"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""72b2a611-c748-4cd9-b8e3-a52f9383181e"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""name"": """",
+                    ""id"": ""2a5a349e-ab1b-4519-8149-bcc4088071e2"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button6"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Climb"",
+                    ""action"": ""Grab"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""064008bf-d63b-4d3d-9a34-19d28599b3a3"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fdf4bd94-add9-4b26-bd6a-be318fc8d05e"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""631dac9a-9565-4cb9-8fda-a88a89e9a6b1"",
+                    ""path"": ""<HID::USB Gamepad >/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d555d38-fad9-4c38-8789-88b0ef3e5c34"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a51bca7-8b9b-4403-89b7-26899b62653f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -239,6 +324,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Movement_Crouch = m_Movement.FindAction("Crouch", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
         m_Movement_Climb = m_Movement.FindAction("Climb", throwIfNotFound: true);
+        m_Movement_Grab = m_Movement.FindAction("Grab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -292,6 +378,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Movement_Crouch;
     private readonly InputAction m_Movement_Jump;
     private readonly InputAction m_Movement_Climb;
+    private readonly InputAction m_Movement_Grab;
     public struct MovementActions
     {
         private @PlayerInput m_Wrapper;
@@ -300,6 +387,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Movement_Crouch;
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
         public InputAction @Climb => m_Wrapper.m_Movement_Climb;
+        public InputAction @Grab => m_Wrapper.m_Movement_Grab;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -321,6 +409,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Climb.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnClimb;
                 @Climb.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnClimb;
                 @Climb.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnClimb;
+                @Grab.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnGrab;
             }
             m_Wrapper.m_MovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -337,6 +428,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Climb.started += instance.OnClimb;
                 @Climb.performed += instance.OnClimb;
                 @Climb.canceled += instance.OnClimb;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
             }
         }
     }
@@ -347,5 +441,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
     }
 }

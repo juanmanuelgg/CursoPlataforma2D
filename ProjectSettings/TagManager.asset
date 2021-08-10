@@ -35,15 +35,30 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Platforms
+  - Background And Decoration
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3067522011
+    locked: 0
   - name: Terrain
     uniqueID: 1183884115
     locked: 0
+  - name: Platforms
+    uniqueID: 2905789567
+    locked: 0
   - name: Characters
     uniqueID: 343663629
+    locked: 0
+  - name: Items
+    uniqueID: 1052914903
+    locked: 0
+  - name: Effects
+    uniqueID: 3838845983
+    locked: 0
+  - name: UserInfo
+    uniqueID: 2501716877
     locked: 0
