@@ -192,7 +192,7 @@ public class FoxControl : MonoBehaviour
 
             if (collision.gameObject.name == "Enemy")
             {
-                Debug.Log("Fox: "+ rigidbody2d.position.y + ", Enemy:" + collision.gameObject.transform.position.y + " Enemy Offset:" + (collision.gameObject.transform.position.y + KILL_OFFSET));
+                // Debug.Log("Fox: "+ rigidbody2d.position.y + ", Enemy:" + collision.gameObject.transform.position.y + " Enemy Offset:" + (collision.gameObject.transform.position.y + KILL_OFFSET));
                 if(rigidbody2d.position.y > (collision.gameObject.transform.position.y + KILL_OFFSET)){
                     Destroy(collision.gameObject);
                 } else {
